@@ -18,12 +18,12 @@
     <h1>List of Heroes</h1>
     <ul>
         {% for hero in all_heroes %}
-        <table width = 100%>
+        <table width = 30%>
             <tr>
                 <td style="width: 25%"><li><h2>{{hero.name}}</td></li></h2>
-                <td style="width: 25%"><h3><a href= "{% url 'superheroes:detail' hero.id %}"> Click for details</a></h3></td>
-                <td style="width: 25%"><h3><a href= "{% url 'superheroes:edit' hero.id %}"> Click to edit</a></h3></td>
-                <td style="width: 25%"><h3><a href= "{% url 'superheroes:delete' hero.id %}"> Click to delete</a></h3></td>
+                <td style="width: 5%"><h5><a href= "{% url 'superheroes:detail' hero.id %}"> Details</a></h5></td>
+                <td style="width: 5%"><h5><a href= "{% url 'superheroes:edit' hero.id %}"> Edit</a></h5></td>
+                <td style="width: 5%"><h5><a href= "{% url 'superheroes:delete' hero.id %}"> Delete</a></h5></td>
             </tr>    
         </table>
         {% endfor %}
