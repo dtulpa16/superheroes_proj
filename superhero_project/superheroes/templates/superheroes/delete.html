@@ -10,17 +10,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <title>Create New Hero</title>
+    <title>Delete</title>
 </head>
 <body>
-    <form action = "{% url 'superheroes:create' %}" method="POST">
+    <form action = "{% url 'superheroes:delete' deleted_hero.id %}" method="POST">
         {% csrf_token %}
-        Name : <input type = 'text' name ='name' id="name"><br />
-        Alter Ego : <input type = 'text' name ='alter_ego' id="alter_ego"><br />
-        Primary Ability : <input type = 'text' name ='primary_ability' id="primary_ability"><br />
-        Secondary Ability : <input type = 'text' name ='secondary_ability' id="secondary_ability"><br />
-        Catchphrase : <input type = 'text' name ='catch_phrase' id="catch_phrase"><br />
-        <input type="submit" value="Add!">
+            <h2> Delete {{deleted_hero.name}}?</h2>><br>
+        <input type="submit" value="Delete">
+    </form>
+    <form action="{% url 'superheroes:index'%}">
+        <input type="submit" value="Cancel">
     </form>
 </body>
 </html>
